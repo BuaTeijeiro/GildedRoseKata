@@ -38,4 +38,57 @@ public class NormalItemTest {
         assertEquals(79, item.getSellIn());
 
     }
+
+    @Test
+    public void NormalItem_UpdateQuality_NotExpired(){
+        NormalItem item = new NormalItem("Leche", 10, 20);
+        item.updateQuality();
+        assertEquals(19,item.getQuality());
+    }
+
+    @Test
+    public void NormalItem_UpdateQuality_AboutToExpired(){
+        NormalItem item = new NormalItem("Leche", 0, 20);
+        item.updateQuality();
+        assertEquals(19,item.getQuality());
+    }
+
+    @Test
+    public void NormalItem_UpdateQuality_Expired(){
+        NormalItem item = new NormalItem("Leche", -3, 20);
+        item.updateQuality();
+        assertEquals(18,item.getQuality());
+    }
+
+    @Test
+    public void NormalItem_UpdateItem_NotExpired(){
+        NormalItem item = new NormalItem("Leche", 10, 20);
+        item.updateItem();
+        assertEquals(9, item.getSellIn());
+        assertEquals(19,item.getQuality());
+    }
+
+    @Test
+    public void NormalItem_UpdateItem_AbouttoExpire(){
+        NormalItem item = new NormalItem("Leche", 1, 20);
+        item.updateItem();
+        assertEquals(0, item.getSellIn());
+        assertEquals(19,item.getQuality());
+    }
+
+    @Test
+    public void NormalItem_UpdateItem_JustExpired(){
+        NormalItem item = new NormalItem("Leche", 0, 20);
+        item.updateItem();
+        assertEquals(-1, item.getSellIn());
+        assertEquals(18,item.getQuality());
+    }
+
+    @Test
+    public void NormalItem_UpdateItem_Expired(){
+        NormalItem item = new NormalItem("Leche", -20, 10);
+        item.updateItem();
+        assertEquals(-21, item.getSellIn());
+        assertEquals(8,item.getQuality());
+    }
 }

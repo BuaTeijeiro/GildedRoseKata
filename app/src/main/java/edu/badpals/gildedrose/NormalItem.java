@@ -31,4 +31,13 @@ public class NormalItem implements Updateable{
         this.item.quality = newQuality;
     }
 
+    @Override
+    public void updateQuality() {
+        if(getSellIn() >= 0){
+            setQuality(getQuality() - 1);
+        } else {
+            setQuality(getQuality() - 2);
+        }
+    }
+
 }
