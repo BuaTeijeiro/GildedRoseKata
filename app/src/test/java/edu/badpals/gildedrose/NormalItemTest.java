@@ -61,6 +61,27 @@ public class NormalItemTest {
     }
 
     @Test
+    public void NormalItem_UpdateQuality_NullQualityNotExpired(){
+        NormalItem item = new NormalItem("Leche", 4, 0);
+        item.updateQuality();
+        assertEquals(0,item.getQuality());
+    }
+
+    @Test
+    public void NormalItem_UpdateQuality_NullQualityExpired(){
+        NormalItem item = new NormalItem("Leche", -4, 0);
+        item.updateQuality();
+        assertEquals(0,item.getQuality());
+    }
+
+    @Test
+    public void NormalItem_UpdateQuality_1QualityExpired(){
+        NormalItem item = new NormalItem("Leche", -4, 1);
+        item.updateQuality();
+        assertEquals(0,item.getQuality());
+    }
+
+    @Test
     public void NormalItem_UpdateItem_NotExpired(){
         NormalItem item = new NormalItem("Leche", 10, 20);
         item.updateItem();
