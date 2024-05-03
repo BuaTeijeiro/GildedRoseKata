@@ -19,4 +19,15 @@ public class NormalItemTest {
         assertEquals(100, item.getSellIn());
         assertEquals(50, item.getQuality());
     }
+
+    @Test
+    public void NormalItemSetters(){
+        NormalItem item = new NormalItem("Harina", 80, 20);
+        item.setName("Arroz");
+        item.setSellIn(100);
+        item.setQuality(50);
+        assertEquals("Arroz", item.getName());
+        assertEquals(100, item.getSellIn());
+        assertEquals(50, item.getQuality());
+    }
 }

@@ -18,4 +18,17 @@ public class NormalItem {
     public int getQuality(){
         return this.item.quality;
     }
+
+    public void setName(String newName){
+        this.item.name = newName;
+    }
+
+    public void setSellIn(int newSellIn){
+        this.item.sellIn = newSellIn;
+    }
+
+    public void setQuality(int newQuality){
+        this.item.quality = newQuality;
+    }
+
 }
