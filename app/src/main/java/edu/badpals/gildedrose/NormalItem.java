@@ -1,6 +1,6 @@
 package edu.badpals.gildedrose;
 
-public class NormalItem {
+public class NormalItem implements Updateable{
     private Item item;
 
     public NormalItem(String name, int SellIn, int Quality){

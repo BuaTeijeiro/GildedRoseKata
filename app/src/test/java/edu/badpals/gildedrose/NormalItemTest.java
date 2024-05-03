@@ -30,4 +30,12 @@ public class NormalItemTest {
         assertEquals(100, item.getSellIn());
         assertEquals(50, item.getQuality());
     }
+
+    @Test
+    public void NormalItem_UpdateSellIn(){
+        NormalItem item = new NormalItem("Harina", 80, 20);
+        item.updateSellIn();
+        assertEquals(79, item.getSellIn());
+
+    }
 }
