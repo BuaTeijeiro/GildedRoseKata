@@ -8,4 +8,11 @@ public interface Updateable {
         setSellIn(getSellIn() - 1);
     }
 
+    public void updateQuality();
+    
+    public default void updateItem(){
+        updateSellIn();
+        updateQuality();
+    }
+
 }
