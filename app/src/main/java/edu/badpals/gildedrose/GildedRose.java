@@ -7,23 +7,27 @@ import java.util.Optional;
 class GildedRose {
     List<Updateable> items = new ArrayList<>();
 
+    private List<Updateable> getItems() {
+        return items;
+    }
+
     public GildedRose() {
     }
 
     public void addItem(Updateable item){
-        this.items.add(item);
+        getItems().add(item);
     }
 
     public int getSize(){
-        return this.items.size();
+        return getItems().size();
     }
 
     public Updateable getItem(int position){
-        return this.items.get(position);
+        return getItems().get(position);
     }
 
     public void updateItems(){
-        for (Updateable item : this.items){
+        for (Updateable item : getItems()){
             item.updateItem();
         }
     }
