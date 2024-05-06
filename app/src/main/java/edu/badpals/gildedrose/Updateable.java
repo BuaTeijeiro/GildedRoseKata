@@ -3,6 +3,7 @@ package edu.badpals.gildedrose;
 public interface Updateable {
     public int getSellIn();
     public void setSellIn(int newSellIn);
+    public int getQuality();
 
     public default void updateSellIn(){
         setSellIn(getSellIn() - 1);
