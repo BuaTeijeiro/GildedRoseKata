@@ -47,4 +47,8 @@ public class BackstagePass implements Updateable{
             setQuality(50);
         }
     }
+    @Override
+    public String toString() {
+        return this.item.toString();
+    }
 }

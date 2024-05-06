@@ -36,4 +36,8 @@ public class Sulfuras implements Updateable{
     public void updateSellIn(){
         //Esto nunca se modifica
     }
+    @Override
+    public String toString() {
+        return this.item.toString();
+    }
 }

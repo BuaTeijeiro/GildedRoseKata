@@ -45,7 +45,8 @@ public class AgedBrie implements Updateable{
         }
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return this.item.toString();
+    }
 }

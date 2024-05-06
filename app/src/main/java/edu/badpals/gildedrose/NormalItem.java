@@ -45,4 +45,9 @@ public class NormalItem implements Updateable{
 
     }
 
+    @Override
+    public String toString() {
+        return this.item.toString();
+    }
+
 }

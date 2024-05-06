@@ -44,5 +44,9 @@ public class Conjured implements Updateable {
         }
 
     }
+    @Override
+    public String toString() {
+        return this.item.toString();
+    }
 
 }
