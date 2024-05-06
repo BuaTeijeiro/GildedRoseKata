@@ -1,13 +1,34 @@
 package edu.badpals.gildedrose;
 
-class GildedRose {
-    Item[] items;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
-    public GildedRose(Item[] items) {
-        this.items = items;
+class GildedRose {
+    List<Updateable> items = new ArrayList<>();
+
+    public GildedRose() {
     }
 
-    public void updateQuality() {
+    public void addItem(Updateable item){
+        this.items.add(item);
+    }
+
+    public int getSize(){
+        return this.items.size();
+    }
+
+    public Updateable getItem(int position){
+        return this.items.get(position);
+    }
+
+    public void updateItems(){
+        for (Updateable item : this.items){
+            item.updateItem();
+        }
+    }
+
+    /*public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if (!items[i].name.equals("Aged Brie")
                     && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
@@ -58,5 +79,5 @@ class GildedRose {
                 }
             }
         }
-    }
+    }*/
 }

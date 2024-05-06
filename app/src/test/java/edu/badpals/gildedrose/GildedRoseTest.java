@@ -14,33 +14,53 @@ class GildedRoseTest {
         GildedRose shop = new GildedRose();
         assertEquals(0,shop.getSize());
 
-        shop.add(new NormalItem("+5 Dexterity Vest", 10, 20));
-        shop.add(new AgedBrie("Aged Brie", 2, 0));
-        shop.add(new NormalItem("Elixir of the Mongoose", 5, 7));
-        shop.add(new Sulfuras("Sulfuras, Hand of Ragnaros", 0));
-        shop.add(new Sulfuras("Sulfuras, Hand of Ragnaros", -1));
-        shop.add(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 15, 20));
-        shop.add(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 10, 49));
-        shop.add(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 5, 49));
-        shop.add(new Conjured("Conjured Mana Cake", 3, 6));
+        shop.addItem(new NormalItem("+5 Dexterity Vest", 10, 20));
+        shop.addItem(new AgedBrie("Aged Brie", 2, 0));
+        shop.addItem(new NormalItem("Elixir of the Mongoose", 5, 7));
+        shop.addItem(new Sulfuras("Sulfuras, Hand of Ragnaros", 0));
+        shop.addItem(new Sulfuras("Sulfuras, Hand of Ragnaros", -1));
+        shop.addItem(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 15, 20));
+        shop.addItem(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 10, 49));
+        shop.addItem(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 5, 49));
+        shop.addItem(new Conjured("Conjured Mana Cake", 3, 6));
 
         assertEquals(9,shop.getSize());
     }
 
-    /*@Test
+    @Test
+    void test_getItem(){
+        GildedRose shop = new GildedRose();
+        shop.addItem(new NormalItem("+5 Dexterity Vest", 10, 20));
+        shop.addItem(new AgedBrie("Aged Brie", 2, 0));
+        shop.addItem(new NormalItem("Elixir of the Mongoose", 5, 7));
+        shop.addItem(new Sulfuras("Sulfuras, Hand of Ragnaros", 0));
+        shop.addItem(new Sulfuras("Sulfuras, Hand of Ragnaros", -1));
+        shop.addItem(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 15, 20));
+        shop.addItem(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 10, 49));
+        shop.addItem(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 5, 49));
+        shop.addItem(new Conjured("Conjured Mana Cake", 3, 6));
+
+        AgedBrie expectedBrie = (AgedBrie) shop.getItem(1);
+        assertEquals("Aged Brie",expectedBrie.getName());
+        assertEquals(2,expectedBrie.getSellIn());
+        assertEquals(0,expectedBrie.getQuality());
+
+    }
+
+    @Test
     void testUpdateItems(){
         GildedRose shop = new GildedRose();
 
 
-        shop.add(new NormalItem("+5 Dexterity Vest", 10, 20));
-        shop.add(new AgedBrie("Aged Brie", 2, 0));
-        shop.add(new NormalItem("Elixir of the Mongoose", 5, 7));
-        shop.add(new Sulfuras("Sulfuras, Hand of Ragnaros", 0));
-        shop.add(new Sulfuras("Sulfuras, Hand of Ragnaros", -1));
-        shop.add(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 15, 20));
-        shop.add(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 10, 49));
-        shop.add(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 5, 49));
-        shop.add(new Conjured("Conjured Mana Cake", 3, 6));
+        shop.addItem(new NormalItem("+5 Dexterity Vest", 10, 20));
+        shop.addItem(new AgedBrie("Aged Brie", 2, 0));
+        shop.addItem(new NormalItem("Elixir of the Mongoose", 5, 7));
+        shop.addItem(new Sulfuras("Sulfuras, Hand of Ragnaros", 0));
+        shop.addItem(new Sulfuras("Sulfuras, Hand of Ragnaros", -1));
+        shop.addItem(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 15, 20));
+        shop.addItem(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 10, 49));
+        shop.addItem(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 5, 49));
+        shop.addItem(new Conjured("Conjured Mana Cake", 3, 6));
 
         shop.updateItems();
         assertEquals(9,shop.getItem(0).getSellIn());
@@ -62,7 +82,7 @@ class GildedRoseTest {
         assertEquals(2,shop.getItem(8).getSellIn());
         assertEquals(4,shop.getItem(8).getQuality());
 
-    };*/
+    };
 
 
 
