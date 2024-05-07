@@ -40,9 +40,7 @@ public class AgedBrie implements Updateable{
         }else{
             setQuality(getQuality()+2);
         }
-        if(getQuality()>50){
-            setQuality(50);
-        }
+        correctQuality();
     }
 
     @Override

@@ -43,9 +43,7 @@ public class BackstagePass implements Updateable{
         } else if (getSellIn()<0) {
             setQuality(0);
         }
-        if(getQuality()>50){
-            setQuality(50);
-        }
+        correctQuality();
     }
     @Override
     public String toString() {
