@@ -23,6 +23,10 @@ public class Sulfuras implements Updateable{
         this.item.name = newName;
     }
 
+    public void setQuality(int newQuality){
+        //Esto nunca se modifica
+    };
+
     public void setSellIn(int newSellIn){
         this.item.sellIn = newSellIn;
     }

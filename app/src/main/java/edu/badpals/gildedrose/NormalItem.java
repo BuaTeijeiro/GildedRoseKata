@@ -39,9 +39,7 @@ public class NormalItem implements Updateable{
             setQuality(getQuality() - 2);
         }
 
-        if(getQuality()<0){
-            setQuality(0);
-        }
+        correctQuality();
 
     }
 

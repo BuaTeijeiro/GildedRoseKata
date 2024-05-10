@@ -22,7 +22,7 @@ class GildedRose {
         return getItems().size();
     }
 
-    public Updateable getItem(int position){
+    Updateable getItem(int position){
         return getItems().get(position);
     }
 

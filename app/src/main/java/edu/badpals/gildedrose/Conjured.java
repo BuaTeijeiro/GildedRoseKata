@@ -39,9 +39,7 @@ public class Conjured implements Updateable {
             setQuality(getQuality() - 4);
         }
 
-        if(getQuality()<0){
-            setQuality(0);
-        }
+        correctQuality();
 
     }
     @Override
